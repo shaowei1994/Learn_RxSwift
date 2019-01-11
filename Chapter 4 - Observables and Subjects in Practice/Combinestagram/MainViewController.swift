@@ -31,10 +31,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var itemAdd: UIBarButtonItem!
     
     /*
-        Since the dispose bag is owned by the view controller,
-        as soon as the view controller is released, all your
-        observables will be disposed as well
-    */
+     Since the dispose bag is owned by the view controller,
+     as soon as the view controller is released, all your
+     observables will be disposed as well
+     */
     private let bag = DisposeBag()
     private let images = Variable<[UIImage]>([])
     
@@ -65,7 +65,6 @@ class MainViewController: UIViewController {
         guard let image = imagePreview.image else { return }
         
         PhotoWriter.save(image)
-            .asSingle()
             .subscribe(
                 onSuccess: { [weak self] id in
                     self?.showMessage("Saved with id: \(id)")
@@ -73,13 +72,13 @@ class MainViewController: UIViewController {
                 },
                 onError: { [weak self] error in
                     self?.showMessage("Error", description: error.localizedDescription)
-                })
+            })
             .disposed(by: bag)
         
     }
     
     @IBAction func actionAdd() {
-//        images.value.append(UIImage(named: "IMG_1907.jpg")!)
+        //        images.value.append(UIImage(named: "IMG_1907.jpg")!)
         let photosViewController = storyboard!.instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
         // Push photosViewController from the project's storyboard onto the navigation stack.
         navigationController!.pushViewController(photosViewController, animated: true)
@@ -90,8 +89,8 @@ class MainViewController: UIViewController {
                     images.value.append(newImage)
                 },
                 onDisposed: {
-                        print("completed photo selection")
-                })
+                    print("completed photo selection")
+            })
             .disposed(by: bag)
     }
     
