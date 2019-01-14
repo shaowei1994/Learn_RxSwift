@@ -37,8 +37,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imagesShared = images.asObservable().share()
         
-        images.asObservable()
+        imagesShared
             // only the last element within the given interval (0.5) can pass
             .throttle(0.5, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] photos in
@@ -48,7 +49,7 @@ class MainViewController: UIViewController {
             })
             .disposed(by: bag)
         
-        images.asObservable()
+        imagesShared
             .subscribe(onNext: { [weak self] photos in
                 self?.updateUI(photos: photos)
             })
@@ -65,6 +66,7 @@ class MainViewController: UIViewController {
     @IBAction func actionClear() {
         images.value = []
         imageCache = []
+        self.updateNavigationIcon()
     }
     
     @IBAction func actionSave() {
@@ -140,10 +142,9 @@ class MainViewController: UIViewController {
             .scaled(CGSize(width: 22, height: 22))
             .withRenderingMode(.alwaysOriginal)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: icon,
-            style: .done,
-            target: nil,
-            action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: icon,
+                                                           style: .done,
+                                                           target: nil,
+                                                           action: nil)
     }
 }
