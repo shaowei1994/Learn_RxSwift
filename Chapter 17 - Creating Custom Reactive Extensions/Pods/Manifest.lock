@@ -1,0 +1,72 @@
+PODS:
+  - Gifu (2.0.0)
+  - Nimble (7.3.4)
+  - OHHTTPStubs (8.0.0):
+    - OHHTTPStubs/Default (= 8.0.0)
+  - OHHTTPStubs/Core (8.0.0)
+  - OHHTTPStubs/Default (8.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (8.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (8.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (8.0.0)
+  - OHHTTPStubs/Swift (8.0.0):
+    - OHHTTPStubs/Default
+  - RxAtomic (4.4.2)
+  - RxBlocking (4.4.1):
+    - RxAtomic (~> 4.4)
+    - RxSwift (~> 4.0)
+  - RxNimble (4.1.0):
+    - Nimble (~> 7.0)
+    - RxBlocking (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.0.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Gifu (from `https://github.com/kaishin/Gifu.git`, commit `693dbc9`)
+  - Nimble
+  - OHHTTPStubs
+  - OHHTTPStubs/Swift
+  - RxBlocking
+  - RxNimble
+  - RxSwift (= 4.0.0)
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - OHHTTPStubs
+    - RxAtomic
+    - RxBlocking
+    - RxNimble
+    - RxSwift
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Gifu:
+    :commit: 693dbc9
+    :git: https://github.com/kaishin/Gifu.git
+
+CHECKOUT OPTIONS:
+  Gifu:
+    :commit: 693dbc9
+    :git: https://github.com/kaishin/Gifu.git
+
+SPEC CHECKSUMS:
+  Gifu: 6c9726dcbb30ad85efe1aa85603392b5ec592e33
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxBlocking: 5508e90d36ca2304632dc9378ece4e9b5d4bf656
+  RxNimble: e5a34bf3b18d85406fc2a6e2cbc73aa2b4a858f0
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 3201b6788071e57f79f5d4eba858a7e29a13d85b
+
+COCOAPODS: 1.5.3
